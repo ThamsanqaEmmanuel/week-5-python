@@ -1,36 +1,34 @@
-# Base class
-class Book:
-    def __init__(self, title, author, pages):
-        self.title = title
-        self.author = author
-        self.pages = pages
+#Defining a class
+class Smartphone: 
+    def __init__(self, model):
+        self.model = model
 
-    def get_summary(self):
-        return f"'{self.title}' by {self.author}, {self.pages} pages."
+    def differance(self):
+        print(f"{self.model} Smartphone") 
+    
+         
 
-    def read(self):
-        return f"You start reading '{self.title}'."
+Smartphone1 = Smartphone("model")
+print(Smartphone1.model)   
 
-# Subclass demonstrating inheritance
-class Ebook(Book):
-    def __init__(self, title, author, pages, file_size):
-        super().__init__(title, author, pages)
-        self.file_size = file_size 
+#Polymorphism
 
-    def download(self):
-        return f"Downloading '{self.title}'... ({self.file_size} MB)"
+class iPhone(Smartphone): 
+    def differance(self):
+        print(f"{self.model} This is an iPhone") 
 
-    # Overriding a method
-    def read(self):
-        return f"You start reading '{self.title}' on your e-reader."
+class Samsung(Smartphone): 
+    def differance(self):
+        print(f"{self.model} This is a Samsung")
 
-# Create instances
-physical_book = Book("1984", "George Orwell", 328)
-ebook = Ebook("Brave New World", "Aldous Huxley", 288, 2.5)
+def Smartphone_OS(display):
+    display.differance()
 
-# Test methods
-print(physical_book.get_summary())
-print(physical_book.read())
-print(ebook.get_summary())
-print(ebook.download())
-print(ebook.read())
+iPhone2 = iPhone("iPhone 16  takes better photos")
+Samsung2 = Samsung("Samsung Galaxy S21 Ultra takes even better photos")
+
+Smartphone_OS(iPhone2)
+Smartphone_OS(Samsung2)
+
+
+
