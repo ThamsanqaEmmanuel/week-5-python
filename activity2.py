@@ -1,23 +1,7 @@
-# Base class
-class Vehicle:
+class Plane:
     def move(self):
-        pass  # Placeholder for derived classes
+        print("Flying!!!")
 
-# Subclasses
-class Car(Vehicle):
-    def move(self):
-        return "Driving 🚗"
+plane = Plane()
 
-class Plane(Vehicle):
-    def move(self):
-        return "Flying ✈️"
-
-class Boat(Vehicle):
-    def move(self):
-        return "Sailing 🚤"
-
-# Polymorphism in action
-vehicles = [Car(), Plane(), Boat()]
-
-for vehicle in vehicles:
-    print(vehicle.move())
+plane.move()
